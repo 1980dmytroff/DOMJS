@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <title>sort-dom</title>
 <style type="text/css">
-	div { 
-		width: 300px;
+	div.party, div.box { 
+		width: 200px;
 		height: 50px;
 		background-color: red;
 		color: #fff;
@@ -14,6 +14,7 @@
 		font-size: 26px;
 		line-height: 50px;
 		text-align: center;
+		font-size: 16px;
 	}
 </style>
 </head>
@@ -28,6 +29,21 @@
 		<div class="box" data-sort="1" title="Алексей">date 1.......Алексей</div>
 		<div class="box" data-sort="4" title="Миша">date 4.......Миша</div>
 	</section>
+
+	<button type="button" onclick="sortListParty()">sort-data</button></th>
+
+	<div class="holidays" style="">
+		<div class="party" data-days="354">354</div>
+		<div class="party" data-days="51">51</div>
+		<div class="party" data-days="57">57</div>
+		<div class="party" data-days="95">95</div>
+		<div class="party" data-days="104">104</div>
+		<div class="party" data-days="117">117</div>
+		<div class="party" data-days="141">141</div>
+		<div class="party" data-days="171">171</div>
+		<div class="party" data-days="179">179</div>
+		<div class="party" data-days="285">285</div>	
+	</div>
 
 
 

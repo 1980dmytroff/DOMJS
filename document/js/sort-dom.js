@@ -9,7 +9,7 @@
 
 		sortArray.push([ value, div ]);
 	};
-
+	console.log(sortArray);
 	sortArray.sort(compareNumeric);
 
 	var parent = document.getElementById('boxes');
@@ -23,6 +23,31 @@ function compareNumeric(a, b) {
   if (a > b) return 1;
   if (a < b) return -1;
 };*/
+
+function sortListParty() {
+	var divs = document.querySelectorAll('div.party');
+	var sortArray = [];
+
+	for (var i = 0; i < divs.length; i++) {
+		var div = divs[i];
+		var value = +divs[i].attributes[1].nodeValue;
+
+		sortArray.push([ value, div ]);
+	};
+	sortArray.sort(compareNumeric);
+
+	var parent = document.querySelector('div.holidays');
+	parent.innerHTML = "";
+
+	for(var i = 0, l = sortArray.length; i < l; i++) {
+		parent.appendChild(sortArray[i][1]);
+	};
+};
+
+function compareNumeric(a, b) {
+  if (a[0] > b[0]) return 1;
+  if (a[0] < b[0]) return -1;
+};
 
 
 /*function sortListData() {
