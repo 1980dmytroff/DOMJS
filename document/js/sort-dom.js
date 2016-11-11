@@ -81,3 +81,5 @@ function sortListTtile() {
 		parent.append(arr[i]);
 	};
 };
+
+console.log(arr);
