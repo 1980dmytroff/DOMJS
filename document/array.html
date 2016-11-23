@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title></title>
+</head>
+<body>
+
+<script>
+	
+	/*var b = new Array([2, 3, 5, 7, 11], [2, 4, 6, 8, 10, 12, 14]);
+
+
+	function getNewSortArray(array) {
+		var arr = [];
+
+		for (var i = 0; i < array.length; i++) {
+			if (Array.isArray(array[i])) {
+				for (var j = 0; j < array[i].length; j++) {
+					arr.push(array[i][j]);
+				}
+			} else {
+				arr.push(array[i]);
+			}
+		}
+
+		console.log(arr);
+
+		for (var j = 0, len = arr.length - 1; j < len; j++) {
+			var swapped = false;
+			var i = 0;
+
+			while (i < len - j) {
+				if (arr[i] > arr[i + 1]) {  // used Bubble Sort
+					var c = arr[i];
+					arr[i] = arr[i + 1];
+					arr[i + 1] = c;
+					swapped = true;
+				}
+				i++;
+			}
+			if (!swapped) break;
+		}
+
+		return arr;
+
+	}
+
+	getNewSortArray(b);*/
+
+	/******************************************************************/
+
+	/*var a = new Array([1, 7, 11, 17], [3, 5, 13]);
+	var newArr = [];
+
+	function iterator (array) {
+		var item;
+		for (var i = 0; i < array.length; i++) {
+			item = array[i];
+			(Object.prototype.toString.call(item) === '[object Array]') ? iterator(item) : newArr.push(item);
+		}
+	}
+
+	iterator(a);
+	console.log(newArr);*/
+
+	/*(Array.isArray(item)) ? iterator(item) : newArr.push(item);*/
+
+	/******************************************************************/
+
+	var obj = {
+		name: 'alex',
+		secondName: 'alexovich',
+		adress: {
+			city: 'Kharkov',
+			street: 'Garibaldy'
+		}
+	};
+
+	var arr = [];
+
+	function getListObject(object) {
+		for (key in object) {
+			if (object.hasOwnProperty(key)) {
+				if (object[key] == '[object Object]') {
+					getListObject(object[key]);
+				} else {
+					arr.push(key);
+				}
+			}
+		}
+
+		return arr.join(', ');
+	};
+
+	console.log(getListObject(obj));
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

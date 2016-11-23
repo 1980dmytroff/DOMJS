@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf8" />
+    <title>улитка</title>
+	<style type="text/css">
+		table {
+		    margin: 0 auto;
+		}
+		td {
+		    padding: 10px;
+			text-align: center;
+		}
+	</style>
+	<script type="text/javascript">
+	    function go() {
+            var n = 5;
+            var i = n*n;
+            var p = Math.floor(n/2);
+            var A = [];
+            var matrix = '<table border="1" cellpadding="4" cellspacing="0"><tbody>';;
+            for(var s = 0; s < n; s++) A.push(new Array(n));
+            
+            for (var k = 1;k <= p; k++) {
+                for (var j = k - 1; j < n - k + 1; j++) A[k - 1][j] = i--;
+                for (var j = k; j < n - k + 1; j++) A[j][n - k] = i--;
+                for (var j = n - k - 1; j >= k - 1 ;j--) A[n - k][j] = i--;
+                for (var j = n - k - 1; j >= k; j--) A[j][k - 1] = i--;
+            }
+			
+            if (n % 2 == 1) A[p][p] = 1;
+			
+            for (var i = 0; i < n; i++) {
+                matrix += '<tr>';
+            	for (j = 0;j < n;j++) matrix += '<td>' + A[n-j-1][n-i-1] + '</td>';
+            	matrix += '</tr>';
+            }
+			
+            matrix += '</tbody></table>';
+            document.getElementById('matrix').innerHTML = matrix;
+
+            
+		}
+	</script>
+</head>
+<body OnLoad="go();">
+	<div id="matrix"></div>
+</body>
+</html>
