@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+   <title></title>
+</head>
+<body>
+
+<script>
+
+var array = [
+				[0,1,0,1],
+				[1,0,1,0],
+				[0,1,0,1],
+				[1,0,1,0]
+			];
+var sum = 0;
+var r = 'horizon';
+var c = 'vertical';
+var row;
+var col;
+var step = array.length;
+
+for (var i = 0; i < array.length; i++) {
+	row = i;
+	step--
+	for (var b = 0; b < array[i].length; b++) {
+		col = b;
+		if (array[i][b]) {
+			if (!array[i][col + 1]) {sum += 2; console.log('i='+i,'b='+b, 'col='+col, 'sum='+sum);}
+			if (step) {
+				if (!array[row + 1][b]) {sum += 2; console.log('i='+i,'b='+b, 'row='+row, 'sum='+sum);}
+			} else {
+				sum +=2;
+				console.log('i='+i,'b='+b, 'row='+row, 'sum='+sum);
+			}
+			
+		}
+	}
+}
+
+console.log(sum);;
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
