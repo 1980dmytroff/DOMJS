@@ -105,4 +105,5 @@ function sortListTtile() {
 	for(var i = 0, l = arr.length; i < l; i++) {
 		parent.append(arr[i]);
 	};
+
 };
